@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roasts</title>
+</head>
+<body>
+    <a href="/" style="color: blue;">Home</a> | <a href="/newpost/" style="color: blue;">New Post</a> | <a href="/boasts/" style="color: blue;">Boasts</a> | <a href="/votes/" style="color: blue;">Sorted By Votes</a>
+    <br>
+    <h1><u>{{ roasts_title }}</u></h1>
+    {% for post in roasts %}
+        <br>
+        <h2>{{ post.content }}</h2>
+        <h3><i>Roast</i></h3>
+        <h3>{{ post.votes }}</h3>
+        <a href="/upvote/{{ post.id }}/" style="color: blue;">UpVote</a> | <a href="/downvote/{{ post.id }}/" style="color: blue;">DownVote</a>
+        <h3>{{ post.post_date }}</h3>
+        <br>
+        <br>
+    {% endfor %}
+</body>
+</html>

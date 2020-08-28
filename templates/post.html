@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Post</title>
+</head>
+<body>
+    <a href="/" style="color: blue;">Home</a> | <a href="/boasts/" style="color: blue;">Boasts</a> | <a href="/roasts/" style="color: blue;">Roasts</a> | <a href="/votes/" style="color: blue;">Sorted By Votes</a>
+    <br>
+    <h1><u>{{ newpost_title }}</u></h1>
+    <br>
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

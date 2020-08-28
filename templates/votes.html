@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorted By Votes</title>
+</head>
+<body>
+    <a href="/" style="color: blue;">Home</a> | <a href="/newpost/" style="color: blue;">New Post</a> | <a href="/boasts/" style="color: blue;">Boasts</a> | <a href="/roasts/" style="color: blue;">Roasts</a>
+    <br>
+    <h1><u>{{ votes_title }}</u></h1>
+    {% for post in votes %}
+        <h1>{{ post.votes_title }}</h1>
+        <h2>{{ post.content }}</h2>
+        {% if post.post_type == True %}
+            <h3><i>Boast</i></h3>
+        {% else %}
+            <h3><i>Roast</i></h3>
+        {% endif %}
+        <h3>{{ post.votes }}</h3>
+        <a href="/upvote/{{ post.id }}/" style="color: blue;">UpVote</a> | <a href="/downvote/{{ post.id }}/" style="color: blue;">DownVote</a>
+        <h3>{{ post.post_date }}</h3>
+        <br>
+        <br>
+    {% endfor %}
+</body>
+</html>
